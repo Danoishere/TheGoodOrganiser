@@ -1,0 +1,12 @@
+<template>
+  <div style="position:relative">
+    <compose view-model.bind="orderList"/>
+    <compose view-model.bind="stockMonitor"/>
+    <div if.bind="isEditingOrder" class="overlay">
+      <compose view-model.bind="editOrder"></compose>
+    </div>
+    <div if.bind="isEditingStock" class="overlay">
+      <compose view-model.bind="editStock"></compose>
+    </div>
+  </div>
+</template>

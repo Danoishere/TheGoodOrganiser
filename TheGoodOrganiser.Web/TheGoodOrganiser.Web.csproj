@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{7A506055-290F-4B14-8A0D-17B6D5C6DFCA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="index.html" />
+    <Content Include="scripts\aurelia-core.js" />
+    <Content Include="scripts\aurelia-core.min.js" />
+    <Content Include="scripts\aurelia-routing.js" />
+    <Content Include="scripts\aurelia-routing.min.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\asyncToGenerator.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\classCallCheck.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\createClass.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\defaults.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\defineEnumerableProperties.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\defineProperty.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\extends.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\get.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\inherits.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\instanceof.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\interopRequireDefault.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\interopRequireWildcard.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\jsx.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\newArrowCheck.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\objectDestructuringEmpty.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\objectWithoutProperties.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\possibleConstructorReturn.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\selfGlobal.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\set.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\slicedToArray.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\slicedToArrayLoose.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\taggedTemplateLiteral.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\taggedTemplateLiteralLoose.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\temporalRef.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\temporalUndefined.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\toArray.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\toConsumableArray.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\babel-helpers\typeof.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\plugin-babel.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\regenerator-runtime.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\systemjs-babel-browser.js" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\systemjs-babel-node.js" />
+    <Content Include="scripts\config-esnext.js" />
+    <Content Include="scripts\config-typescript.js" />
+    <Content Include="scripts\system.js" />
+    <Content Include="src\app.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\.DS_Store" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12.json" />
+    <Content Include="scripts\babel\systemjs-plugin-babel%400.0.12\.jspm-hash" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>TheGoodOrganiser.Web</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64124</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64124/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

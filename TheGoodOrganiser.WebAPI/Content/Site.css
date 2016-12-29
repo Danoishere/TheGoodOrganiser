@@ -1,0 +1,52 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.min-38 {
+    min-height: 38px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.bold-hover:hover {
+    font-weight: bold;
+}
+
+.btn-margin {
+    margin-left: 10px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.top-margin {
+    margin-top: 15px;
+}
+
+.overlay {
+    display: block;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    z-index: 100;
+}
+
+.label-lg {
+    font-size: 15px;
+}
+
+.table-responsive {
+    width: 95%;
+    margin: 0 auto;
+}

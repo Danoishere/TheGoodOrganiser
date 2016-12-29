@@ -1,0 +1,107 @@
+<template>
+    <require from="../resources/value-converters/date-format"></require>
+    <br/>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="pull-left">Edit Order</h2>
+            <h2 class="pull-right bold-hover" click.delegate="closeOrder()">&#10006;</h2>
+        </div>
+    </div>
+    <br/>
+
+    <form submit.delegate="saveOrder()">
+        <div class="row" if.bind="order.State === 'Created'">
+            <div class="col-sm-3">
+                <label>Availability</label>
+            </div>
+            <div class="col-sm-9">
+                <span if.bind="availability === 'Loading...'" class="label label-default label-lg">${availability}</span>
+                <span if.bind="availability === 'Available'" class="label label-success label-lg">${availability}</span>
+                <span if.bind="availability === 'Not Available'"  class="label label-danger label-lg">${availability}</span>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>State</label>
+            </div>
+            <div class="col-sm-9">
+                <span if.bind="order.State === 'Created'" class="label label-default label-lg">${order.State}</span>
+                <span if.bind="order.State === 'Ready'"  class="label label-success label-lg">${order.State}</span>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Reference</label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Order Reference" value.bind="order.ReferenceCode"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Camp</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" value.bind="order.Camp" placeholder="Camp name"/>
+            </div>
+        </div>
+         <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Whatsapp Number</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="tel" value.bind="order.WhatsappNumber" placeholder="+41 73 91 04 12"/>
+            </div>
+        </div>
+         <br/>
+         <div class="row">
+            <div class="col-sm-3">
+                <label>Working Phone Number</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="tel" value.bind="order.WorkingPhoneNumber" placeholder="+41 73 91 04 12"/>
+            </div>
+        </div>
+         <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Responsible Receiver</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" value.bind="order.ReceiverName" placeholder="Name of the responsible receiver"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Language</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" value.bind="order.Language" placeholder="Arabic / Farsi / Other"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3"> </div>
+            <div class="col-sm-9">
+                <input type="submit" class="btn btn-primary btn-margin pull-right" value="Save Order"/>
+                <button click.delegate="deleteOrder()" class="btn btn-danger btn-margin pull-right">Delete</button>
+                <button click.delegate="markAsReady()" disabled.bind="availability !== 'Available'" if.bind="order.State === 'Created'" class="btn btn-success btn-margin pull-right">Mark as Ready</button>
+                <button click.delegate="closeThisOrder()" if.bind="order.State === 'Ready'" class="btn btn-success btn-margin pull-right">Close</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row" if.bind="processionError !== ''">
+        <div class="col-sm-12">
+            <h3 class="label label-danger">${processionError}</h3>
+        </div>
+    </div>
+
+    <compose view-model.bind="personNeeds"></compose>
+    
+</template>

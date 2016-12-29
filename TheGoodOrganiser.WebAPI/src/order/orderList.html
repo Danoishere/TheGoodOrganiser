@@ -1,0 +1,37 @@
+<template>
+    <require from="../resources/value-converters/date-format"></require>
+    <require from="../resources/value-converters/filter"></require>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Orders</h3>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-inline top-margin">
+                <button style="margin-bottom:10px;" click.delegate="createOrder()" class="btn btn-success pull-right btn-margin inline-block">Add Order</button>
+                <input value.bind="orderFilter" type="text" class="form-control pull-right inline-block" placeholder="Search | Camp Receiver" />
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row table-responsive">
+        <div class="col-sm-12">
+            <table class="table">
+                <tr>
+                    <th style="width:80px">State</th>
+                    <th>Camp</th>
+                    <th>Reference</th>
+                    <th>Contact</th>
+                </tr>
+                <tr style="cursor:pointer" click.delegate="openOrder(order.Id)" repeat.for="order of orders |filter:orderFilter:filterFunc">
+                    <td if.bind="order.State === 'Closed'"><span class="label label-info label-lg">${order.State}</span></td>
+                    <td if.bind="order.State === 'Created'"><span class="label label-default label-lg">${order.State}</span></td>
+                    <td if.bind="order.State === 'Ready'"><span class="label label-success label-lg">${order.State}</span></td>
+
+                    <td>${order.Camp}</td>
+                    <td>${order.ReferenceCode}</td>
+                    <td>${order.ReceiverName}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>

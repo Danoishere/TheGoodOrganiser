@@ -1,0 +1,42 @@
+<template>
+    <require from="../resources/value-converters/filter"></require>
+    <br/>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Current Stocks of Goods</h3>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-inline top-margin">
+                <button style="margin-bottom:10px;" click.delegate="modifyStock()" class="btn btn-success pull-right btn-margin inline-block">Edit Stock</button>
+                <input value.bind="stockFilter" type="text" class="form-control pull-right inline-block" placeholder="Search | Man Shoes 42" />
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row table-responsive">
+        <div class="col-sm-12">
+        <table class="table">
+            <tr>
+                <th style="width:50px">Amount</th>
+                <th>Type</th>
+                <th>Size</th>
+                <th>Gender</th>
+            </tr>
+            <tr repeat.for="stock of stockInfos| filter:stockFilter:filterFunc">
+                
+                <td><strong>${stock.Amount}x</strong></td>
+                <td>${stock.Type}</td>
+
+                <td if.bind="stock.Type === 'Shoes'">${stock.ShoeSize}</td>
+                <td if.bind="stock.Type === 'Pants' || stock.Type === 'Top' || stock.Type === 'Jacket'">
+                    ${stock.ClothSize}
+                </td>
+                <td if.bind="stock.Type === 'Hygiene'" ></td>
+                <td>
+                    ${stock.Gender}
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</template>

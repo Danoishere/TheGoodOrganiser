@@ -1,0 +1,80 @@
+<template>
+    <require from="../resources/value-converters/date-format"></require>
+    <br/>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="pull-left">Edit Stock</h2>
+            <h2 class="pull-right bold-hover" click.delegate="closeOverlay()">&#10006;</h2>
+        </div>
+    </div>
+    <br/>
+    <compose view-model.bind="stockMonitor"></compose>
+    <br/>
+    <br/>
+     <div class="row">
+        <div class="col-sm-12">
+            <h3 class="pull-left">Modify Stock</h3>
+        </div>
+    </div>
+    <form submit.delegate="executeStockChange()">
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Good</label>
+            </div>
+            <div class="col-sm-9">
+                <select class="form-control" value.bind="typeOfGood">
+                    <option value="Shoes">Shoes</option>
+                    <option value="Top">Top</option>
+                    <option value="Pants">Pants</option>
+                    <option value="Jacket">Jacket</option>
+                    <option value="Hygiene">Hygiene</option>
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Gender</label>
+            </div>
+            <div class="col-sm-9">
+                <select class="form-control" value.bind="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Amount</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" value.bind="amount" placeholder="12"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <label if.bind="typeOfGood !== 'Hygiene'">Size</label>
+            </div>
+            <div class="col-sm-9">
+                <select class="form-control" if.bind="typeOfGood === 'Top' || typeOfGood === 'Jacket' || typeOfGood === 'Pants'" value.bind="clothSize">
+                    <option repeat.for="size of clothSizes" model.bind="size">${size}</option>
+                </select>
+                <select class="form-control" if.bind="typeOfGood === 'Shoes'" value.bind="shoeSize">
+                    <option repeat.for="size of shoeSizes" model.bind="size">${size}</option>
+                </select>   
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-9">
+                <button click.delegate="addToStock()" class="btn btn-success btn-margin pull-right">Add to stock</button>
+                <button click.delegate="removeFromStock()" class="btn btn-danger btn-margin pull-right">Remove from Stock</button>
+            </div>
+        </div>
+        <br/>
+    </form>
+</template>

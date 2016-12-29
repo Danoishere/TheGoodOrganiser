@@ -1,0 +1,79 @@
+<template>
+    <require from="../resources/value-converters/date-format"></require>
+    <br/>
+    <br/>
+    <h3 class="pull-left">Person Needs</h3>
+    <button click.delegate="addNeed()" class="btn btn-success pull-right">Add Person</button>
+    <br/>
+    <div repeat.for="need of needs">
+        <br/>
+        <br/>
+        <form submit.delegate="saveNeed(need)">
+            <div class="panel panel-default panel-body">
+                <h3>${$index+1}/${needs.length} Person</h3>
+                <div class="row">
+                    <div class="col-sm-6 min-38">
+                        <input class="form-control" type="text" placeholder="Name of the receiver" value.bind="need.Name"/>
+                    </div>
+                    <div class="col-sm-6 min-38">
+                        <select class="form-control" value.bind="need.Gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <br/>
+                <div class="row ">
+                    <div class="col-sm-3 min-38">
+                        <input class="checkbox-top" type="checkbox" checked.bind="need.NeedsShoes"/>
+                        <label class="label-top">Shoes</label>
+                    </div>
+                    <div class="col-sm-3 min-38">
+                        <select class="form-control" if.bind="need.NeedsShoes" value.bind="need.ShoeSize">
+                            <option repeat.for="size of shoeSizes" model.bind="size">${size}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3 min-38">
+                        <input class="checkbox-top" type="checkbox" checked.bind="need.NeedsPants"/>
+                        <label class="label-top">Pants</label>
+                    </div>
+                    <div class="col-sm-3 min-38">
+                        <select class="form-control" if.bind="need.NeedsPants" value.bind="need.PantsSize">
+                            <option repeat.for="size of clothSizes" model.bind="size">${size}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-sm-3 min-38">
+                        <input class="checkbox-top" type="checkbox" checked.bind="need.NeedsTop"/>
+                        <label class="label-top">Top</label>
+                    </div>
+                    <div class="col-sm-3 min-38">
+                        <select class="form-control" if.bind="need.NeedsTop" value.bind="need.TopSize">
+                            <option repeat.for="size of clothSizes" model.bind="size">${size}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3 min-38">
+                        <input class="checkbox-top" type="checkbox" checked.bind="need.NeedsJacket"/>
+                        <label class="label-top">Jacket</label>
+                    </div>
+                    <div class="col-sm-3 min-38" >
+                        <select class="form-control" if.bind="need.NeedsJacket" value.bind="need.JacketSize">
+                            <option repeat.for="size of clothSizes" model.bind="size">${size}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-sm-6 min-38">
+                        <input class="checkbox-top" type="checkbox" checked.bind="need.NeedsHygiene"/>
+                        <label class="label-top">Hygiene</label>
+                    </div>
+                    <div class="col-sm-6 min-38">
+                        <input class="btn btn-primary btn-margin pull-right" type="submit" value="Save Person Needs"/>
+                        <button class="btn btn-danger btn-margin pull-right" click.delegate="deleteNeed(need)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
